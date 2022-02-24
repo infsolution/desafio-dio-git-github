@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    background-color: #a5e6eb;
+}
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.genius{
+    display: grid;
+    grid-template-areas: 'my-green my-red' 'my-yellow my-blue';
+    grid-gap:10px;
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    width: 700px;
+    height: 700px;
+}
+
+.blue{
+    grid-area: my-blue;
+    background-color: blue;
+    border-bottom-right-radius: 100%;
+}
+.red{
+    grid-area: my-red;
+    background-color: red;
+    border-top-right-radius: 100%;
+}
+.yellow{
+    grid-area: my-yellow;
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+}
+.green{
+    grid-area: my-green;
+    background-color: green;
+    border-top-left-radius: 100%;
+}
+.selected{
+    opacity: 0.4;
+}
