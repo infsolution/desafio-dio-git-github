@@ -1,12 +1,14 @@
 let order = []
 let clickedOrder = []
 let score = 0
-
+let stop = false
 const blue = document.querySelector('.blue')
 const red = document.querySelector('.red')
 const yellow = document.querySelector('.yellow')
 const green = document.querySelector('.green')
-
+let play = document.getElementById('score') 
+play.innerHTML = score
+const start = document.querySelector('.start')
 
 const shuffleOrder=()=>{
     let colorOrder = Math.floor(Math.random()*4)
@@ -22,10 +24,10 @@ const lightColor=(element, number)=>{
     number += 500
     setTimeout(()=>{
         element.classList.add('selected')
-    }, number - 2500)
+    }, number - 250)
     setTimeout(() => {
        element.classList.remove('selected') 
-    },2500); 
+    }); 
 }
 
 const checkOrder =()=>{
@@ -35,7 +37,8 @@ const checkOrder =()=>{
             break
         }
     }
-    if(clickedOrder.length == order.length){
+    if(clickedOrder.length == order.length && stop){
+        play.innerHTML = score
         alert(`Score: ${score}\nParabéns! Vocçê acertou... Ir para o proíxmo nível`)
         nextLevel()
     }
@@ -45,49 +48,40 @@ const click =(color)=>{
     clickedOrder[clickedOrder.length] = color
     creatColorElement(color).classList.add('selected')
     setTimeout(() => {
-        creatColorElement(color).classList.remve('selected')   
+        creatColorElement(color).classList.remove('selected')   
         checkOrder()
-    }, 2500);
+    }, 250);
    
 }
 
 const creatColorElement=(color)=>{
-    let selectedColor = null
-    switch(color){
-        case 0:
-            selectedColor = green
-            break
-        case 1:
-            selectedColor = red
-            break
-        case 2:
-            selectedColor = yellow
-            break
-        case 3:
-            selectedColor = blue
-            break
-        default:
-            null
-
+    if(color == 0) {
+        return green;
+    } else if(color == 1) {
+        return red;
+    } else if (color == 2) {
+        return yellow;
+    } else if (color == 3) {
+        return blue;
     }
-    return selectedColor
+
 }
 
+
 const nextLevel =()=>{
-    score+
+    score++
     shuffleOrder()
 }
 
 const finished=()=>{
-    alert(`Score: ${score}\nOpa! Infelizmente voçê perdeu\n Para reiniciar clique em ok`)
+    alert(`Score: ${score}\nOpa! Infelizmente voçê perdeu\n Para reiniciar clique em START`)
     order = []
     clickedOrder = []
-    playGame()
 }
 
 const playGame =()=>{
-    alert(`Bem Vindo ao Genius! Prepare-se para o jogo...`)
-    sscore = 0
+    //alert(`Bem Vindo ao Genius! Prepare-se para o jogo...`)
+    score = 0
     nextLevel()
 }
 
@@ -100,5 +94,5 @@ green.onclick =()=> click(0)
 red.onclick =()=> click(1)
 yellow.onclick =()=> click(2)
 blue.onclick =()=> click(3)
-
-playGame()
+start.onclick =()=> playGame()
+//playGame()
