@@ -6,7 +6,8 @@ const blue = document.querySelector('.blue')
 const red = document.querySelector('.red')
 const yellow = document.querySelector('.yellow')
 const green = document.querySelector('.green')
-let play = document.getElementById('score') 
+let play = document.getElementById('score')
+const round = document.querySelector('.round') 
 play.innerHTML = score
 const start = document.querySelector('.start')
 
@@ -36,8 +37,9 @@ const checkOrder =()=>{
             finished()
             break
         }
-    }
-    if(clickedOrder.length == order.length && stop){
+    } 
+    console.log("ORDER Array", order, clickedOrder)
+     if(clickedOrder.length == order.length){
         play.innerHTML = score
         alert(`Score: ${score}\nParabéns! Vocçê acertou... Ir para o proíxmo nível`)
         nextLevel()
@@ -74,15 +76,19 @@ const nextLevel =()=>{
 }
 
 const finished=()=>{
-    alert(`Score: ${score}\nOpa! Infelizmente voçê perdeu\n Para reiniciar clique em START`)
+    alert(`Score: ${score}\nOpa! Infelizmente voçê perdeu\n Para reiniciar clique em ok!`)
     order = []
     clickedOrder = []
+    score = 0
+    play.innerHTML = score
+    playGame()
 }
 
 const playGame =()=>{
     //alert(`Bem Vindo ao Genius! Prepare-se para o jogo...`)
     score = 0
     nextLevel()
+    round.classList.add('hiden')
 }
 
 // green.addEventListener('click', click(0))

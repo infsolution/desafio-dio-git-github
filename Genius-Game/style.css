@@ -48,13 +48,13 @@ body{
     border: 10px solid #0b21e6;
     background-color: #9e0707;
     border-radius: 100%;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     z-index: 1;
     text-align: center;
     position: fixed;
-    bottom: 200px;
-    right: 700px;
+    bottom: 240px;
+    right: 660px;
 }
 
 .start{
@@ -64,6 +64,7 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .palyer{
@@ -85,4 +86,8 @@ body{
 .score{
     font-size: 40px;
     color: #9e0707;
+}
+
+.hiden{
+    display: none;
 }
