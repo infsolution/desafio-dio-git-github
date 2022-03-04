@@ -1,12 +1,14 @@
-// @flow 
 import * as React from 'react';
-type Props = {
-    
-};
-export const Layout = ({children}) => {
+import Header from '../header';
+import { Container } from '../layout/styled';
+
+const Layout:React.FC = ({children}) => {
     return (
-        <div>
-            Layout
-        </div>
+        <Container>
+            <Header/>
+            {children}
+        </Container>
     );
 };
+
+export default Layout

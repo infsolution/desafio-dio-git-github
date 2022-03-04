@@ -1,15 +1,15 @@
 import React from 'react';
-import { Layout } from './components/layout';
-import { Profile } from './components/profile';
-import { Repositories } from './components/repositories';
-import './App.css';
+import Layout  from './components/layout';
+import  Profile  from './components/profile';
+import  Repositories  from './components/repositories';
 
 function App() {
-  return (
+  return (   
     <Layout>
         <Profile/>
         <Repositories/>
     </Layout>
+    
   );
 }
 
