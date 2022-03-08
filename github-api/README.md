@@ -5,5 +5,4 @@ Projeto desenvolvido para o bootcamp Eduzz Fullstack Developer
 
 - Reactjs
 - Typescript
-- TDD
 - Clean code
