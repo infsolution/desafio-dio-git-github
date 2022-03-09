@@ -1,9 +1,9 @@
 import { Router, Request, Response, NextFunction } from "express";
 
 
-const userRoute = Router()
+const userRoutes = Router()
 
-userRoute.get('/v1/users',(request: Request, response: Response, next:NextFunction )=>{
+userRoutes.get('/v1/users',(request: Request, response: Response, next:NextFunction )=>{
     try {
         response.send({users: []})
     } catch (error) {
@@ -12,4 +12,4 @@ userRoute.get('/v1/users',(request: Request, response: Response, next:NextFuncti
 })
 
 
-export default userRoute
+export default userRoutes
