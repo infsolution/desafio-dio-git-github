@@ -1,4 +1,4 @@
-# Repositório com conteúdo do Bootcamp Eduzz Fullstack Developer
+# Repositório com conteúdo dos Bootcamps DIO
 
-Repsitório com aulas e projetos do bootcamp Eduzz Fullstack Developer
+Repsitório contendo os códigos dos Bootcamps realizados na DIO.
 
